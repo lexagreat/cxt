@@ -222,7 +222,9 @@ function home() {
       let currentActiveIndex = -1;
       let scrollTriggerInstance;
 
-      wrapper.style.height = scrollableDistance + window.innerHeight + "px";
+      if (isDesktop) {
+         wrapper.style.height = scrollableDistance + window.innerHeight + "px";
+      }
 
       labels.forEach((label, index) => {
          label.addEventListener("click", () => {
@@ -230,28 +232,29 @@ function home() {
             if (items[index]) {
                const isDesktopClick = window.innerWidth >= 1024;
 
-               let targetScrollPosition;
-
                if (isDesktopClick) {
-                  targetScrollPosition = items[index].offsetTop - 100;
+                  const targetScrollPosition = items[index].offsetTop - 100;
+                  const targetProgress = Math.min(
+                     targetScrollPosition / scrollableDistance,
+                     1
+                  );
+
+                  const triggerStart = scrollTriggerInstance.start;
+                  const triggerEnd = scrollTriggerInstance.end;
+                  const targetScrollY =
+                     triggerStart +
+                     targetProgress * (triggerEnd - triggerStart);
+
+                  window.scrollTo({
+                     top: targetScrollY,
+                     behavior: "smooth",
+                  });
                } else {
-                  targetScrollPosition = items[index].offsetLeft;
+                  list.scrollTo({
+                     left: items[index].offsetLeft,
+                     behavior: "smooth",
+                  });
                }
-
-               const targetProgress = Math.min(
-                  targetScrollPosition / scrollableDistance,
-                  1
-               );
-
-               const triggerStart = scrollTriggerInstance.start;
-               const triggerEnd = scrollTriggerInstance.end;
-               const targetScrollY =
-                  triggerStart + targetProgress * (triggerEnd - triggerStart);
-
-               window.scrollTo({
-                  top: targetScrollY,
-                  behavior: "smooth",
-               });
 
                currentActiveIndex = index;
                radios.forEach((radio) => {
@@ -266,84 +269,83 @@ function home() {
          });
       });
 
-      scrollTriggerInstance = ScrollTrigger.create({
-         trigger: wrapper,
-         start: "top top",
-         end: "bottom bottom",
-         onUpdate: (self) => {
-            const progress = self.progress;
-            const scrollPosition = scrollableDistance * progress;
+      function updateActiveItem() {
+         const items = list.querySelectorAll(".home-reagent");
+         const listRect = list.getBoundingClientRect();
 
-            if (isDesktop) {
+         let newActiveIndex = -1;
+         let minDistance = Infinity;
+
+         if (isDesktop) {
+            const listCenter = listRect.top + listRect.height / 2;
+
+            items.forEach((item, index) => {
+               const itemRect = item.getBoundingClientRect();
+               const itemCenter = itemRect.top + itemRect.height / 2;
+
+               if (
+                  itemCenter >= listRect.top &&
+                  itemCenter <= listRect.bottom
+               ) {
+                  const distance = Math.abs(itemCenter - listCenter);
+                  if (distance < minDistance) {
+                     minDistance = distance;
+                     newActiveIndex = index;
+                  }
+               }
+            });
+         } else {
+            const listCenter = listRect.left + listRect.width / 2;
+
+            items.forEach((item, index) => {
+               const itemRect = item.getBoundingClientRect();
+               const itemCenter = itemRect.left + itemRect.width / 2;
+
+               if (
+                  itemCenter >= listRect.left &&
+                  itemCenter <= listRect.right
+               ) {
+                  const distance = Math.abs(itemCenter - listCenter);
+                  if (distance < minDistance) {
+                     minDistance = distance;
+                     newActiveIndex = index;
+                  }
+               }
+            });
+         }
+
+         if (newActiveIndex !== currentActiveIndex && newActiveIndex !== -1) {
+            currentActiveIndex = newActiveIndex;
+            radios.forEach((radio) => {
+               radio.checked = false;
+            });
+            radios[currentActiveIndex].checked = true;
+            tabs.forEach((tab) => {
+               tab.classList.remove("active");
+            });
+            tabs[currentActiveIndex].classList.add("active");
+         }
+      }
+
+      if (isDesktop) {
+         scrollTriggerInstance = ScrollTrigger.create({
+            trigger: wrapper,
+            start: "top top",
+            end: "bottom bottom",
+            onUpdate: (self) => {
+               const progress = self.progress;
+               const scrollPosition = scrollableDistance * progress;
+
                list.scrollTop = scrollPosition;
-            } else {
-               list.scrollLeft = scrollPosition;
-            }
-
-            const items = list.querySelectorAll(".home-reagent");
-            const listRect = list.getBoundingClientRect();
-
-            let newActiveIndex = -1;
-            let minDistance = Infinity;
-
-            if (isDesktop) {
-               const listCenter = listRect.top + listRect.height / 2;
-
-               items.forEach((item, index) => {
-                  const itemRect = item.getBoundingClientRect();
-                  const itemCenter = itemRect.top + itemRect.height / 2;
-
-                  if (
-                     itemCenter >= listRect.top &&
-                     itemCenter <= listRect.bottom
-                  ) {
-                     const distance = Math.abs(itemCenter - listCenter);
-                     if (distance < minDistance) {
-                        minDistance = distance;
-                        newActiveIndex = index;
-                     }
-                  }
-               });
-            } else {
-               const listCenter = listRect.left + listRect.width / 2;
-
-               items.forEach((item, index) => {
-                  const itemRect = item.getBoundingClientRect();
-                  const itemCenter = itemRect.left + itemRect.width / 2;
-
-                  if (
-                     itemCenter >= listRect.left &&
-                     itemCenter <= listRect.right
-                  ) {
-                     const distance = Math.abs(itemCenter - listCenter);
-                     if (distance < minDistance) {
-                        minDistance = distance;
-                        newActiveIndex = index;
-                     }
-                  }
-               });
-            }
-
-            if (
-               newActiveIndex !== currentActiveIndex &&
-               newActiveIndex !== -1
-            ) {
-               currentActiveIndex = newActiveIndex;
-               // console.log(`Активный элемент: ${currentActiveIndex + 1}`);
-               radios.forEach((radio) => {
-                  radio.checked = false;
-               });
-               radios[currentActiveIndex].checked = true;
-               tabs.forEach((tab) => {
-                  tab.classList.remove("active");
-               });
-               tabs[currentActiveIndex].classList.add("active");
-            }
-         },
-         scrub: 0.1,
-         pin: window.innerWidth >= 1024 ? inner : false,
-         pinSpacing: false,
-      });
+               updateActiveItem();
+            },
+            scrub: 0.1,
+            pin: inner,
+            pinSpacing: false,
+         });
+      } else {
+         list.addEventListener("scroll", updateActiveItem);
+      }
    }
    function partners() {
       const slider = document.querySelector(".home-partners .swiper");

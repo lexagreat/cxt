@@ -460,6 +460,7 @@
 
    @media (max-width: $tablet) {
       margin-top: var(--margin);
+      padding-bottom: var(--margin);
    }
    // .home-reagents__wrapper
 
@@ -477,6 +478,10 @@
       @media (max-width: $tablet) {
          flex-direction: column;
          gap: 40px;
+         position: relative;
+         height: unset;
+         right: unset;
+         top: unset;
       }
       @media (max-width: $mobile) {
          gap: 24px;
@@ -569,6 +574,7 @@
          overflow: auto;
       }
       @media (max-width: $mobile) {
+         height: 75px;
          label {
             width: 80px;
             flex: 0 0 80px;

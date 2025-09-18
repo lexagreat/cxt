@@ -1216,6 +1216,7 @@ label {
 @media (max-width: 1024px) {
   .home-reagents {
     margin-top: var(--margin);
+    padding-bottom: var(--margin);
   }
 }
 .home-reagents__inner {
@@ -1234,6 +1235,10 @@ label {
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 40px;
+    position: relative;
+    height: unset;
+    right: unset;
+    top: unset;
   }
 }
 @media (max-width: 568px) {
@@ -1363,6 +1368,9 @@ label {
   }
 }
 @media (max-width: 568px) {
+  .home-reagents__radios {
+    height: 75px;
+  }
   .home-reagents__radios label {
     width: 80px;
     -webkit-box-flex: 0;
