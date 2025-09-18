@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+@@include('components/_head.html',{
+"lang":"en",
+"title":"New project",
+"description":"",
+"keywords":"",
+})
+
+<body>
+   <div class="wrapper">
+      @@include('components/_header.html')
+      <main class="ui-page" style="background-color: #4D4D4D; padding: 100px;">
+         <div style="display: flex;flex-wrap: wrap; gap: 10px;">
+            <button class="btn btn--xs btn--primary btn--text-anim">
+               <p><span>button</span><span>button</span></p>
+               <img src="img/icons/Arrow-right-small.svg" alt="">
+            </button>
+            <button class="btn btn--s btn--primary btn--text-anim">
+               <p><span>button</span><span>button</span></p>
+               <img src="img/icons/Arrow-right-small.svg" alt="">
+            </button>
+            <button class="btn btn--m btn--primary btn--text-anim">
+               <p><span>button</span><span>button</span></p>
+               <img src="img/icons/Arrow-right-small.svg" alt="">
+            </button>
+            <button class="btn btn--s btn--grey">Button</button>
+            <button class="btn btn--s btn--grey">Button</button>
+            <button class="btn btn--m btn--grey">Button</button>
+            <button class="btn btn--m btn--grey-light">Button</button>
+            <button class="btn btn--m btn--grey-light">Button</button>
+            <button class="btn btn--m btn--grey-light">Button</button>
+            <button class="btn btn--m btn--blur">Button</button>
+            <button class="btn btn--m btn--blur">Button</button>
+            <button class="btn btn--m btn--blur">Button</button>
+            <button class="btn btn--m btn--transparent-white">Button</button>
+            <button class="btn btn--m btn--transparent-white">Button</button>
+            <button class="btn btn--m btn--transparent-white">Button</button>
+            <button class="btn btn--m btn--transparent-black">Button</button>
+            <button class="btn btn--m btn--transparent-black">Button</button>
+            <button class="btn btn--m btn--transparent-black">Button</button>
+         </div>
+
+      </main>
+      @@include('components/_footer.html')
+
+   </div>
+   @@include('components/_scripts.html')
+</body>
+
+</html>

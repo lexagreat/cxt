@@ -1,0 +1,136 @@
+$tablet: 1024px;
+$mobile: 568px;
+
+$mainFont: "Inter Tight", sans-serif;
+
+$dark-blue: #000025;
+$light-blue: #7c90a5;
+$blue: #001836;
+$light-grey: #f3f5f7;
+$grey: #eceef1;
+$red: #d50515;
+$black: #000000;
+
+:root {
+   --header: 88px;
+   --container: calc((100vw - 1360px) / 2);
+   --margin: 88px;
+   @media (max-width: 1440px) {
+      --container: 40px;
+   }
+   @media (max-width: $tablet) {
+      --container: 20px;
+      --margin: 80px;
+   }
+   @media (max-width: $mobile) {
+      --header: 72px;
+      --container: 16px;
+      --margin: 64px;
+   }
+}
+
+@mixin h1 {
+   font-weight: 400;
+   font-size: 64px;
+   line-height: 110.00000000000001%;
+   letter-spacing: 0%;
+   vertical-align: middle;
+}
+@mixin h1-tablet {
+   font-weight: 400;
+   font-size: 54px;
+   line-height: 110.00000000000001%;
+   letter-spacing: 0%;
+   vertical-align: middle;
+}
+@mixin h1-mobile {
+   font-weight: 400;
+   font-size: 32px;
+   line-height: 110.00000000000001%;
+   letter-spacing: 0%;
+   vertical-align: middle;
+}
+
+@mixin h2 {
+   font-weight: 400;
+   font-size: 44px;
+   line-height: 110.00000000000001%;
+   letter-spacing: 0%;
+   vertical-align: middle;
+}
+@mixin h2-tablet {
+   font-weight: 400;
+   font-size: 40px;
+   line-height: 110.00000000000001%;
+   letter-spacing: 0%;
+   vertical-align: middle;
+}
+@mixin h2-mobile {
+   font-weight: 400;
+   font-size: 26px;
+   line-height: 110.00000000000001%;
+   letter-spacing: 0%;
+   vertical-align: middle;
+}
+
+@mixin h3 {
+   font-weight: 400;
+   font-size: 34px;
+   line-height: 114.99999999999999%;
+   letter-spacing: 0%;
+   vertical-align: middle;
+}
+@mixin h3-tablet {
+   font-weight: 400;
+   font-size: 28px;
+   line-height: 114.99999999999999%;
+   letter-spacing: 0%;
+   vertical-align: middle;
+}
+@mixin h3-mobile {
+   font-weight: 400;
+   font-size: 24px;
+   line-height: 114.99999999999999%;
+   letter-spacing: 0%;
+   vertical-align: middle;
+}
+@mixin h4 {
+   font-weight: 400;
+   font-size: 24px;
+   line-height: 110.00000000000001%;
+   letter-spacing: 0%;
+   vertical-align: middle;
+}
+
+@mixin h5 {
+   font-weight: 400;
+   font-size: 18px;
+   line-height: 120%;
+   letter-spacing: 0%;
+   vertical-align: middle;
+}
+
+@mixin body-text {
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 150%;
+   letter-spacing: 1%;
+}
+@mixin medium_16 {
+   font-weight: 500;
+   font-size: 16px;
+   line-height: 160%;
+   letter-spacing: 1%;
+}
+@mixin regular_14 {
+   font-weight: 400;
+   font-size: 14px;
+   line-height: 140%;
+   letter-spacing: 1%;
+}
+@mixin regular_12 {
+   font-weight: 400;
+   font-size: 12px;
+   line-height: 140%;
+   letter-spacing: 1%;
+}

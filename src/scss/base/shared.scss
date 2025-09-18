@@ -1,0 +1,353 @@
+.collapse:not(.collapse_show) {
+   display: none;
+}
+body {
+   font-family: $mainFont;
+}
+.wrapper {
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   font-weight: 500;
+}
+.main {
+   flex: 1;
+   // padding-top: var(--header);
+}
+.container {
+   padding: 0 var(--container);
+   width: 100%;
+
+   margin: 0 auto;
+}
+.circle {
+   --size: 32px;
+   flex: 0 0 var(--size);
+   width: var(--size);
+   height: var(--size);
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+label {
+   cursor: pointer;
+}
+.pc {
+   @media (max-width: $tablet) {
+      display: none;
+   }
+   @media (max-width: $mobile) {
+      display: none;
+   }
+}
+.tablet {
+   display: none;
+   @media (max-width: $tablet) {
+      display: block;
+   }
+   @media (max-width: $mobile) {
+      display: none;
+   }
+}
+.mobile {
+   display: none;
+   @media (max-width: $tablet) {
+      display: none;
+   }
+   @media (max-width: $mobile) {
+      display: block;
+   }
+}
+.pc-tablet {
+   display: flex;
+   @media (max-width: $mobile) {
+      display: none;
+   }
+}
+.tablet-mobile {
+   display: none;
+   @media (max-width: $tablet) {
+      display: flex;
+   }
+}
+.h1 {
+   @include h1;
+   @media (max-width: $tablet) {
+      @include h1-tablet;
+   }
+   @media (max-width: $mobile) {
+      @include h1-mobile;
+   }
+}
+.h2 {
+   @include h2;
+   @media (max-width: $tablet) {
+      @include h2-tablet;
+   }
+   @media (max-width: $mobile) {
+      @include h2-mobile;
+   }
+}
+.h3 {
+   @include h3;
+   @media (max-width: $tablet) {
+      @include h3-tablet;
+   }
+   @media (max-width: $mobile) {
+      @include h3-mobile;
+   }
+}
+.h4 {
+   @include h4;
+}
+.h5 {
+   @include h5;
+}
+.body-text {
+   @include body-text;
+}
+.medium_16 {
+   @include medium_16;
+}
+.regular_14 {
+   @include regular_14;
+}
+.regular_12 {
+   @include regular_12;
+}
+
+.btn {
+   --size: 40px;
+   width: fit-content;
+   border-radius: 10px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   transition: 0.3s;
+   cursor: pointer;
+   @include body-text;
+   position: relative;
+   overflow: hidden;
+   height: var(--size);
+   white-space: nowrap;
+   &::before,
+   &::after {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 12px;
+      background-color: red;
+      z-index: 3;
+      transition: 0.3s;
+   }
+   &::before {
+      top: 0;
+   }
+   &::after {
+      bottom: 0;
+   }
+   &--xs {
+      --size: 40px;
+      padding: 0 8px;
+   }
+   &--s {
+      --size: 48px;
+      padding: 0 16px;
+   }
+   &--m {
+      --size: 56px;
+      padding: 0 16px;
+      @media (max-width: $mobile) {
+         --size: 48px;
+         gap: 8px;
+         padding: 0 14px;
+      }
+   }
+   &--arrow-anim {
+      &::before {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         border: 20px solid #f3f5f7;
+         background-color: transparent;
+      }
+      svg {
+         transition: 0.3s;
+         &:nth-child(1) {
+         }
+         &:nth-child(2) {
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+            translate: -120% 20%;
+         }
+      }
+      @media (hover: hover) {
+         &:hover {
+            svg {
+               &:nth-child(1) {
+                  translate: 100% -100%;
+               }
+               &:nth-child(2) {
+                  translate: -50% -50%;
+               }
+            }
+         }
+      }
+   }
+   &--square {
+      width: var(--size);
+      padding: 0;
+   }
+   &--primary {
+      background-color: #001836;
+      color: white;
+      &::before,
+      &::after {
+         background-color: #001836;
+      }
+      @media (hover: hover) {
+         &:hover {
+            background-color: #000025;
+            &::before,
+            &::after {
+               background-color: #000025;
+            }
+         }
+      }
+      &:active {
+         background-color: #000025;
+      }
+   }
+   &--grey {
+      background-color: $grey;
+      color: #00000080;
+      &::before,
+      &::after {
+         background-color: $grey;
+      }
+      @media (hover: hover) {
+         &:hover {
+            color: black;
+         }
+      }
+      &:active {
+         color: black;
+      }
+   }
+   &--grey-light {
+      background-color: #f3f5f7;
+      color: black;
+      svg path {
+         fill: $black;
+      }
+      &::before,
+      &::after {
+         background-color: #f3f5f7;
+      }
+      @media (hover: hover) {
+         &:hover {
+            background-color: $grey;
+         }
+      }
+      &:active {
+         background-color: $grey;
+      }
+   }
+
+   &--blur {
+      background-color: #ffffff1a;
+      backdrop-filter: blur(20px);
+      color: white;
+      &::before,
+      &::after {
+         background-color: #ffffff1a;
+         backdrop-filter: blur(20px);
+      }
+      @media (hover: hover) {
+         &:hover {
+            background-color: #ffffff33;
+            &::before,
+            &::after {
+               background-color: #ffffff33;
+            }
+         }
+      }
+      &:active {
+         background-color: #ffffff33;
+      }
+   }
+   &--transparent-white {
+      background-color: transparent;
+      border: 1px solid #ffffff26;
+
+      color: white;
+      @media (hover: hover) {
+         &:hover {
+            border: 1px solid white;
+         }
+      }
+      &:active {
+         border: 1px solid white;
+      }
+   }
+   &--transparent-black {
+      background-color: transparent;
+      border: 1px solid #00000026;
+      color: black;
+      svg path {
+         fill: $black;
+      }
+      @media (hover: hover) {
+         &:hover {
+            border: 1px solid #000;
+         }
+      }
+      &:active {
+         border: 1px solid #000;
+      }
+   }
+   &--text-anim {
+      &::before,
+      &::after {
+         content: "";
+      }
+      p {
+         position: relative;
+         span {
+            transition: 0.3s;
+            &:nth-child(1) {
+               display: block;
+            }
+            &:nth-child(2) {
+               display: block;
+               position: absolute;
+               top: 0;
+               left: 0;
+               translate: 0 200%;
+            }
+         }
+      }
+      @media (hover: hover) {
+         &:hover {
+            p {
+               span {
+                  &:nth-child(1) {
+                     translate: 0 -200%;
+                  }
+                  &:nth-child(2) {
+                     translate: 0;
+                  }
+               }
+            }
+         }
+      }
+   }
+}

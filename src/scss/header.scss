@@ -1,0 +1,165 @@
+.header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 99;
+   transition: 0.3s;
+   &.hidden {
+      transform: translateY(-100%);
+   }
+   &.white {
+      background-color: white;
+      .header {
+         &__logo {
+            path {
+               fill: $black;
+            }
+            .c {
+               fill: $red;
+            }
+         }
+         &__links {
+            a {
+               color: $black;
+            }
+         }
+         &__burger {
+            div {
+               &::before,
+               &::after,
+               span {
+                  background-color: $black;
+               }
+            }
+         }
+      }
+   }
+   // .header__wrapper
+
+   &__wrapper {
+      height: var(--header);
+      display: flex;
+      align-items: center;
+      gap: 32px;
+   }
+
+   // .header__logo
+
+   &__logo {
+      width: 80px;
+      flex: 0 0 80px;
+      svg {
+         width: 100%;
+         height: 100%;
+         object-fit: contain;
+      }
+      @media (max-width: $tablet) {
+         width: 64px;
+         flex: 0 0 64px;
+      }
+   }
+
+   // .header__main
+
+   &__main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+   }
+
+   // .header__btns
+
+   &__btns {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+   }
+
+   // .header__links
+
+   &__links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      a {
+         @include body-text;
+         color: white;
+         transition: 0.3s;
+         @media (hover: hover) {
+            &:hover {
+               opacity: 0.6;
+            }
+         }
+         &:active {
+            opacity: 0.6;
+         }
+      }
+   }
+
+   // .header__actions
+
+   &__actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+   }
+
+   // .header__search
+
+   &__search {
+   }
+
+   // .header__button
+
+   &__button {
+   }
+
+   // .header__burger
+
+   &__burger {
+      display: none;
+   }
+   @media (max-width: $tablet) {
+      &__main,
+      &__search,
+      &__button {
+         display: none;
+      }
+      &__wrapper {
+         justify-content: space-between;
+      }
+      &__burger {
+         display: flex;
+         div {
+            width: 24px;
+            height: 24px;
+            flex: 0 0 24px;
+            position: relative;
+
+            &::before,
+            &::after,
+            span {
+               content: "";
+               position: absolute;
+               left: 4px;
+               width: 16px;
+               height: 1.5px;
+               background-color: white;
+               transition: 0.3s;
+            }
+            &::before {
+               top: 6px;
+            }
+            &::after {
+               bottom: 6px;
+            }
+            span {
+               top: 50%;
+               translate: 0 -50%;
+            }
+         }
+      }
+   }
+}
