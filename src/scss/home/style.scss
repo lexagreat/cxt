@@ -305,6 +305,7 @@
       margin-top: -60vh;
       opacity: 0;
       transition: 0.3s;
+      padding-bottom: 100px;
    }
    &__line {
       background-color: #ffffff33;
@@ -457,7 +458,7 @@
 .home-reagents {
    margin-top: 160px;
    background: $light-grey;
-
+   padding-bottom: 150px;
    @media (max-width: $tablet) {
       margin-top: var(--margin);
       padding-bottom: var(--margin);
@@ -997,6 +998,10 @@
          margin: -28px;
          margin-top: 0;
          height: 248px;
+      }
+      @media (max-width: $mobile) {
+         margin: -20px;
+         margin-top: 0;
       }
    }
 }

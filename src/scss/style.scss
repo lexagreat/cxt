@@ -1,9 +1,15 @@
 @import "base/style";
+@import "modal";
 @import "home/style";
+@import "production/style";
+@import "catalog/style";
+@import "product/style";
 @import "header";
+@import "breadcrumbs";
 @import "footer";
 
 .home-main {
+   padding-top: 0 !important;
    position: relative;
    .home-hero {
       position: sticky;
@@ -35,5 +41,13 @@
       @media (max-width: $mobile) {
          border-radius: 28px 28px 0 0;
       }
+   }
+}
+.product-main {
+   padding-top: var(--header) !important;
+}
+.product-page {
+   &::before {
+      background-color: #f3f5f7;
    }
 }
