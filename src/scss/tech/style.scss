@@ -3,14 +3,27 @@
    position: relative;
    height: 105svh;
    overflow: hidden;
+   display: flex;
+   flex-direction: column;
+   gap: 40px;
+   @media (max-width: $tablet) {
+      gap: 32px;
+   }
+   @media (max-width: $mobile) {
+      gap: 20px;
+   }
    & > img,
    video {
-      position: absolute;
-      bottom: 0;
-      left: 0;
+      // position: absolute;
+      // bottom: 0;
+      // left: 0;
+      // width: 100%;
+      // z-index: 2;
+      // max-height: 460px;
+      flex: 1;
       width: 100%;
-      z-index: 2;
-      max-height: 460px;
+      height: 100%;
+      object-fit: cover;
       @media (max-width: $tablet) {
          height: 460px;
          width: unset;
