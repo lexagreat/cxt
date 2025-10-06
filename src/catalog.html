@@ -11,7 +11,8 @@
       @@include('components/_header.html')
       <main class="main home-main">
          <section class="catalog-hero hero home-hero">
-            <img src="img/home/hero.webp" alt="">
+            <video src="files/main.mp4" autoplay muted loop playsinline webkit-playsinline></video>
+
             <section class="breadcrumbs-section">
                <div class="container">
                   <ul class="breadcrumbs-section__list scrollbar-none regular_12">
@@ -597,7 +598,8 @@
                <div class="container">
                   <div class="help-section__wrapper" style="background-color: #ECEEF1;">
                      <div class="help-section__main">
-                        <img src="img/home/hero.webp" alt="">
+                        <video src="files/main.mp4" autoplay muted loop playsinline webkit-playsinline></video>
+
                         <h2 class="h2 help-section__title">Помощь в подборе <br> химических реагентов</h2>
                         <p class="body-text help-section__text">Нужна помощь в выборе продукции? Оставьте заявку - наши
                            специалисты подберут оптимальные химические реагенты для ваших задач</p>
@@ -675,6 +677,9 @@
 
    </div>
    @@include('components/_scripts.html')
+   <script>
+      document.querySelector('.footer__inner').style.backgroundColor = '#f3f5f7';
+   </script>
 </body>
 
 </html>

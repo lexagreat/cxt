@@ -1,7 +1,16 @@
+.footer__inner {
+   position: relative;
+   z-index: 10;
+   padding-top: 160px;
+   background-color: white;
+   @media (max-width: $tablet) {
+      padding-top: var(--margin);
+   }
+}
 .footer {
    border-radius: 32px 32px 0 0;
    padding-top: var(--margin);
-   margin-top: 160px;
+
    color: white;
    background-color: $blue;
    padding-bottom: 20px;
@@ -12,9 +21,6 @@
       }
    }
 
-   @media (max-width: $tablet) {
-      margin-top: var(--margin);
-   }
    @media (max-width: $mobile) {
       border-radius: 28px 28px 0 0;
       padding-bottom: 16px;

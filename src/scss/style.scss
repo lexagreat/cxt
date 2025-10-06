@@ -4,9 +4,17 @@
 @import "production/style";
 @import "catalog/style";
 @import "product/style";
+@import "media/style";
+@import "job/style";
+@import "article/style";
+@import "contacts/style";
+@import "documents/style";
+@import "search/style";
+@import "tech/style";
 @import "header";
 @import "breadcrumbs";
 @import "footer";
+@import "about/style";
 
 .home-main {
    padding-top: 0 !important;

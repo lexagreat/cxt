@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="">
+   <meta name="keywords" content="">
+   <link rel="shortcut icon" href="@@favicon.svg" type="image/svg+xml">
+   <link rel="shortcut icon" href="@@favicon.webp" type="image/webp">
+   <link rel="shortcut icon" href="@@favicon.png" type="image/x-icon">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+   <link rel="stylesheet" href="css/style.css">
+   <title>New project</title>
+</head>
+
+<body>
+   <div class="wrapper">
+      <header class="header">
+   <div class="container">
+      <div class="header__wrapper">
+         <a href="#" class="header__logo">
+            <svg width="80" height="36" viewBox="0 0 80 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M56.7334 11.2904V5.09692H78.0001V11.2904H71.5911V31.0852H63.5559V11.2904H56.7334Z"
+                  fill="white" />
+               <path
+                  d="M38.9541 5.09692H31.2842V11.2904L37.5596 17.828V18.5162L31.2842 25.0538V31.2473H38.9541V27.1183L42.7891 23.3334L46.2754 27.1183V31.2473H54.294V25.0538L48.0186 18.5162V17.828L54.294 11.2904V5.09692H46.2754V9.57002L42.7891 13.0109L38.9541 9.57002V5.09692Z"
+                  fill="white" />
+               <path class="c"
+                  d="M18.3838 30.9032V25.0538L23.6133 21.9571L28.4942 25.0538V30.9032L23.6133 34L18.3838 30.9032Z"
+                  fill="white" />
+               <path class="c"
+                  d="M7.22803 25.3978L12.4575 21.8193L17.687 25.0537V30.9031L12.4575 33.9999L7.22803 30.9031V25.3978Z"
+                  fill="white" />
+               <path class="c"
+                  d="M18.3858 11.2903V5.09676L23.6153 2L28.8448 5.09676V11.2903L23.6153 14.387L18.3858 11.2903Z"
+                  fill="white" />
+               <path class="c"
+                  d="M17.6885 11.2903V5.09676L12.459 2L7.22951 5.09676V11.2903L12.1104 14.387L17.6885 11.2903Z"
+                  fill="white" />
+               <path class="c"
+                  d="M12.1104 15.0752L6.88087 11.9784L2 15.0752V21.2687L6.88087 24.7095L12.1104 21.2687V15.0752Z"
+                  fill="white" />
+            </svg>
+
+         </a>
+         <div class="header__main">
+            <div class="header__btns">
+               <button class="btn btn--s btn--blur header__production">
+                  <span>Продукция</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M5.54744 13.0024L11 8.00244L5.54744 3.00244C5.39627 3.17358 5.54744 3.00244 5 3.6222L9.7767 8.00244L5 12.3827C5.5474 13.0024 5.39627 12.8313 5.54744 13.0024Z"
+                        fill="white" />
+                  </svg>
+
+               </button>
+               <button class="btn btn--s btn--square btn--blur">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <g clip-path="url(#clip0_897_1836)">
+                        <path
+                           d="M18.6667 16.5714V18.8572H5.33333V16.5714H4V18.8572C4 19.1603 4.14048 19.451 4.39052 19.6653C4.64057 19.8796 4.97971 20 5.33333 20H18.6667C19.0203 20 19.3594 19.8796 19.6095 19.6653C19.8595 19.451 20 19.1603 20 18.8572V16.5714H18.6667Z"
+                           fill="white" />
+                        <path
+                           d="M17.44 11.8057L16.5 11L12.6667 14.3829V4H11.3334V14.3829L7.5 11L6.56 11.8057L12 16.5714L17.44 11.8057Z"
+                           fill="white" />
+                     </g>
+                     <defs>
+                        <clipPath id="clip0_897_1836">
+                           <rect width="24" height="24" fill="white" />
+                        </clipPath>
+                     </defs>
+                  </svg>
+
+               </button>
+            </div>
+            <ul class="header__links">
+               <li>
+                  <a href="#">О компании</a>
+               </li>
+               <li>
+                  <a href="#">Технологии</a>
+               </li>
+               <li>
+                  <a href="#">Медиацентр</a>
+               </li>
+               <li>
+                  <a href="#">Контакты</a>
+               </li>
+            </ul>
+         </div>
+         <ul class="header__actions">
+            <li>
+               <button class="header__search btn btn--s btn--square btn--transparent-white">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path
+                        d="M16.6539 15.833L19.9746 19.1529L18.8775 20.25L15.5576 16.9293C14.3223 17.9195 12.7858 18.4581 11.2026 18.4559C7.35073 18.4559 4.22461 15.3298 4.22461 11.4779C4.22461 7.62612 7.35073 4.5 11.2026 4.5C15.0544 4.5 18.1805 7.62612 18.1805 11.4779C18.1828 13.0612 17.6441 14.5977 16.6539 15.833ZM15.0986 15.2577C16.0826 14.2458 16.6321 12.8894 16.6298 11.4779C16.6298 8.47898 14.2007 6.05065 11.2026 6.05065C8.20359 6.05065 5.77526 8.47898 5.77526 11.4779C5.77526 14.4761 8.20359 16.9052 11.2026 16.9052C12.614 16.9075 13.9704 16.3579 14.9823 15.374L15.0986 15.2577Z"
+                        fill="white" />
+                  </svg>
+               </button>
+            </li>
+            <li>
+               <button class="btn btn--s btn--transparent-white header__button">Связаться с нами</button>
+            </li>
+            <li>
+               <button class="header__burger btn btn--s btn--blur">
+                  <span>Меню</span>
+                  <div>
+                     <span></span>
+                  </div>
+               </button>
+            </li>
+         </ul>
+      </div>
+      <div class="header-search">
+         <div class="header-search__main">
+            <div class="header-search__input">
+               <input type="text" placeholder="Введите запрос">
+               <a href="#">
+                  <svg style="rotate: 180deg;" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                     <path d="M18 12H5M5 12L11.5448 19M5 12L11.5448 5" stroke="white" stroke-width="1.43182" />
+                  </svg>
+               </a>
+            </div>
+            <ul class="header-search__sugs">
+               <li>
+                  <button class="btn btn--xs  btn--text-anim">
+                     <p><span>Буровой раствор</span><span>Буровой раствор</span></p>
+
+                  </button>
+               </li>
+               <li>
+                  <button class="btn btn--xs  btn--text-anim">
+                     <p><span>Ингибиторы</span><span>Ингибиторы</span></p>
+
+                  </button>
+               </li>
+               <li>
+                  <button class="btn btn--xs  btn--text-anim">
+                     <p><span>РУО</span><span>РУО</span></p>
+
+                  </button>
+               </li>
+               <li>
+                  <button class="btn btn--xs  btn--text-anim">
+                     <p><span>Цементирование</span><span>Цементирование</span></p>
+
+                  </button>
+               </li>
+            </ul>
+         </div>
+      </div>
+      <div class="header-spoiler">
+         <div class="header-spoiler__main">
+            <div class="header-spoiler__item">
+               <h4 class="h4 header-spoiler__title">
+                  Реагенты для бурения <br>скважин
+               </h4>
+               <ul class="header-spoiler__list body-text">
+                  <li><a href="#">Регуляторы фильтрации</a></li>
+                  <li><a href="#">Ингибиторы глинистых сланцев</a></li>
+                  <li><a href="#">Пеногасители и смазки</a></li>
+                  <li><a href="#">Эмульгаторы и компоненты РУО</a></li>
+                  <li><a href="#">Поглотители, профилактика потерь</a></li>
+                  <li><a href="#">Биоциды</a></li>
+               </ul>
+               <a href="#" class="btn btn--s btn--transparent-black">
+                  Смотреть все
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M5.54744 13.0024L11 8.00244L5.54744 3.00244C5.39627 3.17358 5.54744 3.00244 5 3.6222L9.7767 8.00244L5 12.3827C5.5474 13.0024 5.39627 12.8313 5.54744 13.0024Z"
+                        fill="black" />
+                  </svg>
+
+               </a>
+            </div>
+            <div class="header-spoiler__item">
+               <h4 class="h4 header-spoiler__title">
+                  Реагенты для цементирования скважин
+               </h4>
+               <ul class="header-spoiler__list body-text">
+                  <li><a href="#">Средства для глушения скважин</a></li>
+                  <li><a href="#">Средства для КРС</a></li>
+               </ul>
+               <a href="#" class="btn btn--s btn--transparent-black">
+                  Смотреть все
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M5.54744 13.0024L11 8.00244L5.54744 3.00244C5.39627 3.17358 5.54744 3.00244 5 3.6222L9.7767 8.00244L5 12.3827C5.5474 13.0024 5.39627 12.8313 5.54744 13.0024Z"
+                        fill="black" />
+                  </svg>
+
+               </a>
+            </div>
+         </div>
+         <div class="header-spoiler__image">
+            <img src="img/header-spoiler.png" alt="">
+         </div>
+      </div>
+      <div class="header-mobile">
+         <div class="header-mobile__wrapper scrollbar-none">
+            <div class="header-mobile__main">
+               <div class="header-mobile__search">
+                  <a href="#">
+                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                           d="M16.6539 15.833L19.9746 19.1529L18.8775 20.25L15.5576 16.9293C14.3223 17.9195 12.7858 18.4581 11.2026 18.4559C7.35073 18.4559 4.22461 15.3298 4.22461 11.4779C4.22461 7.62612 7.35073 4.5 11.2026 4.5C15.0544 4.5 18.1805 7.62612 18.1805 11.4779C18.1828 13.0612 17.6441 14.5977 16.6539 15.833ZM15.0986 15.2577C16.0826 14.2458 16.6321 12.8894 16.6298 11.4779C16.6298 8.47898 14.2007 6.05065 11.2026 6.05065C8.20359 6.05065 5.77526 8.47898 5.77526 11.4779C5.77526 14.4761 8.20359 16.9052 11.2026 16.9052C12.614 16.9075 13.9704 16.3579 14.9823 15.374L15.0986 15.2577Z"
+                           fill="#00000033" />
+                     </svg>
+                  </a>
+                  <input type="text" placeholder="Поиск по сайту">
+               </div>
+               <ul class="header-mobile__list">
+                  <li>
+                     <a href="#" class="header-mobile__link-sub">
+                        <span>Продукция</span>
+                        <div class="btn btn--square btn--transparent-black btn--xs">
+                           <svg width="24" height="24" viewBox="0 0 16 16" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M5.54744 13.0024L11 8.00244L5.54744 3.00244C5.39627 3.17358 5.54744 3.00244 5 3.6222L9.7767 8.00244L5 12.3827C5.5474 13.0024 5.39627 12.8313 5.54744 13.0024Z"
+                                 fill="black" />
+                           </svg>
+
+                        </div>
+                     </a>
+                  </li>
+                  <li><a href="#">
+                        <span>О компании</span>
+                        <div class="btn btn--square btn--transparent-black btn--xs">
+                           <svg width="24" height="24" viewBox="0 0 16 16" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M5.54744 13.0024L11 8.00244L5.54744 3.00244C5.39627 3.17358 5.54744 3.00244 5 3.6222L9.7767 8.00244L5 12.3827C5.5474 13.0024 5.39627 12.8313 5.54744 13.0024Z"
+                                 fill="black" />
+                           </svg>
+
+                        </div>
+                     </a></li>
+                  <li><a href="#">
+                        <span>Технологии</span>
+                        <div class="btn btn--square btn--transparent-black btn--xs">
+                           <svg width="24" height="24" viewBox="0 0 16 16" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M5.54744 13.0024L11 8.00244L5.54744 3.00244C5.39627 3.17358 5.54744 3.00244 5 3.6222L9.7767 8.00244L5 12.3827C5.5474 13.0024 5.39627 12.8313 5.54744 13.0024Z"
+                                 fill="black" />
+                           </svg>
+
+                        </div>
+                     </a></li>
+                  <li><a href="#">
+                        <span>Медиацентр</span>
+                        <div class="btn btn--square btn--transparent-black btn--xs">
+                           <svg width="24" height="24" viewBox="0 0 16 16" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M5.54744 13.0024L11 8.00244L5.54744 3.00244C5.39627 3.17358 5.54744 3.00244 5 3.6222L9.7767 8.00244L5 12.3827C5.5474 13.0024 5.39627 12.8313 5.54744 13.0024Z"
+                                 fill="black" />
+                           </svg>
+
+                        </div>
+                     </a></li>
+                  <li><a href="#">
+                        <span>Контакты</span>
+                        <div class="btn btn--square btn--transparent-black btn--xs">
+                           <svg width="24" height="24" viewBox="0 0 16 16" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M5.54744 13.0024L11 8.00244L5.54744 3.00244C5.39627 3.17358 5.54744 3.00244 5 3.6222L9.7767 8.00244L5 12.3827C5.5474 13.0024 5.39627 12.8313 5.54744 13.0024Z"
+                                 fill="black" />
+                           </svg>
+
+                        </div>
+                     </a></li>
+               </ul>
+            </div>
+            <div class="header-mobile__footer">
+               <a href="#" class="header-mobile__download">
+                  <div class="btn btn--square btn--xs btn--transparent-black">
+                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_897_1836)">
+                           <path
+                              d="M18.6667 16.5714V18.8572H5.33333V16.5714H4V18.8572C4 19.1603 4.14048 19.451 4.39052 19.6653C4.64057 19.8796 4.97971 20 5.33333 20H18.6667C19.0203 20 19.3594 19.8796 19.6095 19.6653C19.8595 19.451 20 19.1603 20 18.8572V16.5714H18.6667Z"
+                              fill="black" />
+                           <path
+                              d="M17.44 11.8057L16.5 11L12.6667 14.3829V4H11.3334V14.3829L7.5 11L6.56 11.8057L12 16.5714L17.44 11.8057Z"
+                              fill="black" />
+                        </g>
+                        <defs>
+                           <clipPath id="clip0_897_1836">
+                              <rect width="24" height="24" fill="black" />
+                           </clipPath>
+                        </defs>
+                     </svg>
+
+                  </div>
+                  <span>Скачать каталог</span>
+               </a>
+               <button class="btn btn--primary btn--m">Связаться с нами</button>
+            </div>
+            <div class="header-mobile__sub">
+               <button class="btn btn--square btn--transparent-black btn--xs header-mobile__sub-back">
+                  <svg style="rotate: 180deg;" width="24" height="24" viewBox="0 0 16 16" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M5.54744 13.0024L11 8.00244L5.54744 3.00244C5.39627 3.17358 5.54744 3.00244 5 3.6222L9.7767 8.00244L5 12.3827C5.5474 13.0024 5.39627 12.8313 5.54744 13.0024Z"
+                        fill="black" />
+                  </svg>
+
+               </button>
+               <ul class="header-mobile__subs">
+                  <li class="header-sub">
+                     <h5 class="h5 header-sub__title">Средства для глушения скважин</h5>
+                     <ul class="header-sub__list body-text">
+                        <li><a style="color: #000000CC;" href="#">Регуляторы фильтрации</a></li>
+                        <li><a style="color: #000000CC;" href="#">Ингибиторы глинистых сланцев</a></li>
+                        <li><a style="color: #000000CC;" href="#">Пеногасители и смазки</a></li>
+                        <li><a style="color: #000000CC;" href="#">Эмульгаторы и компоненты РУО</a></li>
+                        <li><a style="color: #000000CC;" href="#">Поглотители, профилактика потерь</a></li>
+                        <li><a style="color: #000000CC;" href="#">Биоциды</a></li>
+                     </ul>
+                     <a href="#" style="color: #000000CC;" class="medium_16">Смотреть все</a>
+                  </li>
+                  <li class="header-sub">
+                     <h5 class="h5 header-sub__title">Реагенты для бурения скважин</h5>
+                     <ul class="header-sub__list body-text">
+                        <li><a style="color: #000000CC;" href="#">Регуляторы фильтрации</a></li>
+                        <li><a style="color: #000000CC;" href="#">Средства для КРС</a></li>
+                     </ul>
+                     <a href="#" style="color: #000000CC;" class="medium_16">Смотреть все</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</header>
+<div class="header-spoiler__backdrop"></div>
+      <main class="main home-main">
+         <section class="catalog-hero hero home-hero media-hero"
+            style="background: linear-gradient(360deg, #001836 0%, #000025 100%);">
+
+            <section class="breadcrumbs-section">
+               <div class="container">
+                  <ul class="breadcrumbs-section__list scrollbar-none regular_12">
+                     <li>
+                        <a href="#">Главная</a>
+                     </li>
+                     <li>
+                        <a href="#">Медиацентр</a>
+                     </li>
+                  </ul>
+               </div>
+            </section>
+            <div class="container">
+               <div class="media-hero__wrapper">
+                  <div class="media-hero__header">
+                     <h1 class="media-hero__title h1">Медиацентр</h1>
+                     <div class="home-partners__nav media-section__nav">
+                        <button style="rotate: 180deg;" class="prev btn btn--square btn--s btn--transparent-white">
+                           <svg width="24" height="24" viewBox="0 0 16 16" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M5.54744 13.0024L11 8.00244L5.54744 3.00244C5.39627 3.17358 5.54744 3.00244 5 3.6222L9.7767 8.00244L5 12.3827C5.5474 13.0024 5.39627 12.8313 5.54744 13.0024Z"
+                                 fill="white" />
+                           </svg>
+
+                        </button>
+                        <button class="next btn btn--square btn--s btn--transparent-white">
+                           <svg width="24" height="24" viewBox="0 0 16 16" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M5.54744 13.0024L11 8.00244L5.54744 3.00244C5.39627 3.17358 5.54744 3.00244 5 3.6222L9.7767 8.00244L5 12.3827C5.5474 13.0024 5.39627 12.8313 5.54744 13.0024Z"
+                                 fill="white" />
+                           </svg>
+
+                        </button>
+                     </div>
+                  </div>
+                  <div class="media-hero__slider">
+                     <div class="swiper">
+                        <div class="swiper-wrapper">
+                           <div class="swiper-slide">
+                              <div class="media-slide">
+                                 <div class="media-slide__main">
+                                    <p class="media-slide__header body-text" style="color: #FFFFFF66;">
+                                       <span>03.06.2025</span><span>|</span><span>События </span>
+                                    </p>
+                                    <h3 class="h3">
+                                       Примеры использования ВУС при глушении скважин
+                                    </h3>
+                                    <p class="body-text" style="color: #FFFFFFCC;">
+                                       Пластификатор применяется с целью регулирования реологических свойств тампонажных
+                                       р
+                                       астворов, уменьшения гидравлического сопротивления цементного раствора,
+                                       уменьшения
+                                       давления закачки и продавки
+                                    </p>
+                                    <div class="media-slide__footer">
+                                       <a href="#" class="btn btn--s btn--blur">
+                                          Подробнее
+                                       </a>
+                                       <div class="media-slide__pagination regular_14" style="color: white;">
+                                          01 <span style="opacity: 0.4;">/ 05</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="media-slide__image">
+                                    <img src="img/home/media.webp" alt="">
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="media-slide">
+                                 <div class="media-slide__main">
+                                    <p class="media-slide__header body-text" style="color: #FFFFFF66;">
+                                       <span>03.06.2025</span><span>|</span><span>События </span>
+                                    </p>
+                                    <h3 class="h3">
+                                       Примеры использования ВУС при глушении скважин
+                                    </h3>
+                                    <p class="body-text" style="color: #FFFFFFCC;">
+                                       Пластификатор применяется с целью регулирования реологических свойств тампонажных
+                                       р
+                                       астворов, уменьшения гидравлического сопротивления цементного раствора,
+                                       уменьшения
+                                       давления закачки и продавки
+                                    </p>
+                                    <div class="media-slide__footer">
+                                       <a href="#" class="btn btn--s btn--blur">
+                                          Подробнее
+                                       </a>
+                                       <div class="media-slide__pagination regular_14" style="color: white;">
+                                          02 <span style="opacity: 0.4;">/ 05</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="media-slide__image">
+                                    <img src="img/home/media.webp" alt="">
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="media-slide">
+                                 <div class="media-slide__main">
+                                    <p class="media-slide__header body-text" style="color: #FFFFFF66;">
+                                       <span>03.06.2025</span><span>|</span><span>События </span>
+                                    </p>
+                                    <h3 class="h3">
+                                       Примеры использования ВУС при глушении скважин
+                                    </h3>
+                                    <p class="body-text" style="color: #FFFFFFCC;">
+                                       Пластификатор применяется с целью регулирования реологических свойств тампонажных
+                                       р
+                                       астворов, уменьшения гидравлического сопротивления цементного раствора,
+                                       уменьшения
+                                       давления закачки и продавки
+                                    </p>
+                                    <div class="media-slide__footer">
+                                       <a href="#" class="btn btn--s btn--blur">
+                                          Подробнее
+                                       </a>
+                                       <div class="media-slide__pagination regular_14" style="color: white;">
+                                          03 <span style="opacity: 0.4;">/ 05</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="media-slide__image">
+                                    <img src="img/home/media.webp" alt="">
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="media-slide">
+                                 <div class="media-slide__main">
+                                    <p class="media-slide__header body-text" style="color: #FFFFFF66;">
+                                       <span>03.06.2025</span><span>|</span><span>События </span>
+                                    </p>
+                                    <h3 class="h3">
+                                       Примеры использования ВУС при глушении скважин
+                                    </h3>
+                                    <p class="body-text" style="color: #FFFFFFCC;">
+                                       Пластификатор применяется с целью регулирования реологических свойств тампонажных
+                                       р
+                                       астворов, уменьшения гидравлического сопротивления цементного раствора,
+                                       уменьшения
+                                       давления закачки и продавки
+                                    </p>
+                                    <div class="media-slide__footer">
+                                       <a href="#" class="btn btn--s btn--blur">
+                                          Подробнее
+                                       </a>
+                                       <div class="media-slide__pagination regular_14" style="color: white;">
+                                          04 <span style="opacity: 0.4;">/ 05</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="media-slide__image">
+                                    <img src="img/home/media.webp" alt="">
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="swiper-slide">
+                              <div class="media-slide">
+                                 <div class="media-slide__main">
+                                    <p class="media-slide__header body-text" style="color: #FFFFFF66;">
+                                       <span>03.06.2025</span><span>|</span><span>События </span>
+                                    </p>
+                                    <h3 class="h3">
+                                       Примеры использования ВУС при глушении скважин
+                                    </h3>
+                                    <p class="body-text" style="color: #FFFFFFCC;">
+                                       Пластификатор применяется с целью регулирования реологических свойств тампонажных
+                                       р
+                                       астворов, уменьшения гидравлического сопротивления цементного раствора,
+                                       уменьшения
+                                       давления закачки и продавки
+                                    </p>
+                                    <div class="media-slide__footer">
+                                       <a href="#" class="btn btn--s btn--blur">
+                                          Подробнее
+                                       </a>
+                                       <div class="media-slide__pagination regular_14" style="color: white;">
+                                          05 <span style="opacity: 0.4;">/ 05</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="media-slide__image">
+                                    <img src="img/home/media.webp" alt="">
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <div class="home-page">
+            <section class="media-page">
+               <div class="container">
+                  <div class="media-page__wrapper">
+                     <ul class="media-page__filters media-section__filters scrollbar-none">
+                        <li>
+                           <label class="btn btn--s btn--transparent-black btn--text-anim">
+                              <p>
+                                 <span>Все</span>
+                                 <span>Все</span>
+                              </p>
+                              <input type="radio" name="media" value="999" checked>
+                           </label>
+                        </li>
+                        <li>
+                           <label class="btn btn--s btn--transparent-black btn--text-anim">
+                              <p>
+                                 <span>Новости</span>
+                                 <span>Новости</span>
+                              </p>
+                              <input type="radio" name="media" value="0">
+                           </label>
+                        </li>
+                        <li>
+                           <label class="btn btn--s btn--transparent-black btn--text-anim">
+                              <p>
+                                 <span>Исследования</span>
+                                 <span>Исследования</span>
+                              </p>
+                              <input type="radio" name="media" value="1">
+
+                           </label>
+                        </li>
+                        <li>
+                           <label class="btn btn--s btn--transparent-black btn--text-anim">
+                              <p>
+                                 <span>События</span>
+                                 <span>События</span>
+                              </p>
+                              <input type="radio" name="media" value="2">
+
+                           </label>
+                        </li>
+                        <li>
+                           <label class="btn btn--s btn--transparent-black btn--text-anim">
+                              <p>
+                                 <span>Сертификация</span>
+                                 <span>Сертификация</span>
+                              </p>
+                              <input type="radio" name="media" value="3">
+
+                           </label>
+                        </li>
+                     </ul>
+                     <ul class="media-page__items">
+                        <li class="gr2">
+                           <div class="media-slide column">
+                              <div class="media-slide__main">
+                                 <p class="media-slide__header body-text" style="color: #00000066;">
+                                    <span>03.06.2025</span><span>|</span><span>События </span>
+                                 </p>
+                                 <h3 class="h4">
+                                    Примеры использования ВУС при глушении скважин
+                                 </h3>
+
+                                 <div class="media-slide__footer">
+                                    <a href="#" class="btn btn--s btn--transparent-black">
+                                       Подробнее
+                                    </a>
+                                 </div>
+                              </div>
+                              <div class="media-slide__image">
+                                 <img src="img/home/media.webp" alt="">
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="media-slide">
+                              <div class="media-slide__main">
+                                 <p class="media-slide__header body-text" style="color: #00000066;">
+                                    <span>03.06.2025</span><span>|</span><span>События </span>
+                                 </p>
+                                 <h3 class="h4">
+                                    Примеры использования ВУС при глушении скважин
+                                 </h3>
+
+                                 <div class="media-slide__footer">
+                                    <a href="#" class="btn btn--s btn--transparent-black">
+                                       Подробнее
+                                    </a>
+                                 </div>
+                              </div>
+                              <div class="media-slide__image">
+                                 <img src="img/home/media.webp" alt="">
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="media-slide">
+                              <div class="media-slide__main">
+                                 <p class="media-slide__header body-text" style="color: #00000066;">
+                                    <span>03.06.2025</span><span>|</span><span>События </span>
+                                 </p>
+                                 <h3 class="h4">
+                                    Примеры использования ВУС при глушении скважин
+                                 </h3>
+
+                                 <div class="media-slide__footer">
+                                    <a href="#" class="btn btn--s btn--transparent-black">
+                                       Подробнее
+                                    </a>
+                                 </div>
+                              </div>
+                              <div class="media-slide__image">
+                                 <img src="img/home/media.webp" alt="">
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="media-slide">
+                              <div class="media-slide__main">
+                                 <p class="media-slide__header body-text" style="color: #00000066;">
+                                    <span>03.06.2025</span><span>|</span><span>События </span>
+                                 </p>
+                                 <h3 class="h4">
+                                    Примеры использования ВУС при глушении скважин
+                                 </h3>
+
+                                 <div class="media-slide__footer">
+                                    <a href="#" class="btn btn--s btn--transparent-black">
+                                       Подробнее
+                                    </a>
+                                 </div>
+                              </div>
+                              <div class="media-slide__image">
+                                 <img src="img/home/media.webp" alt="">
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="media-slide">
+                              <div class="media-slide__main">
+                                 <p class="media-slide__header body-text" style="color: #00000066;">
+                                    <span>03.06.2025</span><span>|</span><span>События </span>
+                                 </p>
+                                 <h3 class="h4">
+                                    Примеры использования ВУС при глушении скважин
+                                 </h3>
+
+                                 <div class="media-slide__footer">
+                                    <a href="#" class="btn btn--s btn--transparent-black">
+                                       Подробнее
+                                    </a>
+                                 </div>
+                              </div>
+                              <div class="media-slide__image">
+                                 <img src="img/home/media.webp" alt="">
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="media-slide">
+                              <div class="media-slide__main">
+                                 <p class="media-slide__header body-text" style="color: #00000066;">
+                                    <span>03.06.2025</span><span>|</span><span>События </span>
+                                 </p>
+                                 <h3 class="h4">
+                                    Примеры использования ВУС при глушении скважин
+                                 </h3>
+
+                                 <div class="media-slide__footer">
+                                    <a href="#" class="btn btn--s btn--transparent-black">
+                                       Подробнее
+                                    </a>
+                                 </div>
+                              </div>
+                              <div class="media-slide__image">
+                                 <img src="img/home/media.webp" alt="">
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="media-slide">
+                              <div class="media-slide__main">
+                                 <p class="media-slide__header body-text" style="color: #00000066;">
+                                    <span>03.06.2025</span><span>|</span><span>События </span>
+                                 </p>
+                                 <h3 class="h4">
+                                    Примеры использования ВУС при глушении скважин
+                                 </h3>
+
+                                 <div class="media-slide__footer">
+                                    <a href="#" class="btn btn--s btn--transparent-black">
+                                       Подробнее
+                                    </a>
+                                 </div>
+                              </div>
+                              <div class="media-slide__image">
+                                 <img src="img/home/media.webp" alt="">
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                     <div class="catalog-pagination">
+                        <button class="btn btn--m btn--transparent-black">
+                           Показать еще
+                        </button>
+                        <ul class="catalog-pagination__list">
+                           <li class="disabled">
+                              <button style="rotate: 180deg;">
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                       d="M5.54744 13.0024L11 8.00244L5.54744 3.00244C5.39627 3.17358 5.54744 3.00244 5 3.6222L9.7767 8.00244L5 12.3827C5.5474 13.0024 5.39627 12.8313 5.54744 13.0024Z"
+                                       fill="black" />
+                                 </svg>
+
+                              </button>
+                           </li>
+                           <li>
+                              <button>1</button>
+                           </li>
+                           <li class="active">
+                              <button>2</button>
+                           </li>
+                           <li>
+                              <button>3</button>
+                           </li>
+                           <li>
+                              <button>4</button>
+                           </li>
+                           <li>
+                              <button>...</button>
+                           </li>
+                           <li>
+                              <button>15</button>
+                           </li>
+                           <li>
+                              <button>
+                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                       d="M5.54744 13.0024L11 8.00244L5.54744 3.00244C5.39627 3.17358 5.54744 3.00244 5 3.6222L9.7767 8.00244L5 12.3827C5.5474 13.0024 5.39627 12.8313 5.54744 13.0024Z"
+                                       fill="black" />
+                                 </svg>
+
+                              </button>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+      </main>
+      <footer class="footer__inner">
+
+   <div class="footer">
+      <div class="container">
+         <div class="footer__wrapper">
+            <div class="footer__upper">
+               <a href="#" class="footer__logo">
+                  <img src="img/icons/logo-footer.svg" alt="">
+               </a>
+               <div class="footer__item first">
+                  <div class="footer__subheader body-text" style="color: #FFFFFF66;">
+                     <span>Головной офис</span>
+                  </div>
+                  <ul>
+                     <li>
+                        <a href="#" class="footer__link">Казань, ул . 25 Октября 5А к.1</a>
+                     </li>
+                  </ul>
+                  <ul>
+                     <li>
+                        <a href="tel:+78435282852" class="footer__link">+7 (843) 528-28-52</a>
+                        <a href="mailto:info@sovhimtech.ru" class="footer__link">info@sovhimtech.ru</a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="footer__item">
+                  <div class="footer__subheader footer__subheader--accordion body-text" style="color: #FFFFFF66;">
+                     <span>Навигация</span>
+                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                           d="M5.54744 13.0024L11 8.00244L5.54744 3.00244C5.39627 3.17358 5.54744 3.00244 5 3.6222L9.7767 8.00244L5 12.3827C5.5474 13.0024 5.39627 12.8313 5.54744 13.0024Z"
+                           fill="white" />
+                     </svg>
+                  </div>
+                  <div class="footer__spoiler collapse">
+                     <ul>
+                        <li>
+                           <a href="#" class="footer__link">Продукция</a>
+                        </li>
+                        <li>
+                           <a href="#" class="footer__link">Технологии</a>
+                        </li>
+                        <li>
+                           <a href="#" class="footer__link">О компании</a>
+                        </li>
+                        <li>
+                           <a href="#" class="footer__link">Медиацентр</a>
+                        </li>
+                        <li>
+                           <a href="#" class="footer__link">Контакты</a>
+                        </li>
+                        <li>
+                           <a href="#" class="footer__link">Документы</a>
+                        </li>
+                        <li>
+                           <a href="#" class="footer__link">Карьера</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="footer__item second">
+                  <div class="footer__subheader footer__subheader--accordion body-text" style="color: #FFFFFF66;">
+                     <span>Продукция</span>
+                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                           d="M5.54744 13.0024L11 8.00244L5.54744 3.00244C5.39627 3.17358 5.54744 3.00244 5 3.6222L9.7767 8.00244L5 12.3827C5.5474 13.0024 5.39627 12.8313 5.54744 13.0024Z"
+                           fill="white" />
+                     </svg>
+                  </div>
+                  <div class="footer__spoiler collapse">
+                     <ul>
+                        <li>
+                           <a href="#" class="footer__link">Регуляторы фильтрации</a>
+                        </li>
+                        <li>
+                           <a href="#" class="footer__link">Ингибиторы глинистых сланцев</a>
+                        </li>
+
+                        <li>
+                           <a href="#" class="footer__link">Пеногасители и смазки</a>
+                        </li>
+                        <li>
+                           <a href="#" class="footer__link">Эмульгаторы и компоненты РУО</a>
+                        </li>
+
+                        <li><a href="#" class="footer__link">Поглотители, профилактика потерь</a></li>
+                        <li><a href="#" class="footer__link">Средства для глушения скважин</a></li>
+                        <li><a href="#" class="footer__link">Средства для КРС</a></li>
+                        <li><a href="#" class="footer__link">Биоциды</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="footer__btn">
+                  <button class="btn btn--m btn--transparent-white btn--text-anim">
+                     <p>
+                        <span> Оставить заявку</span><span> Оставить заявку</span>
+                     </p>
+                     <img src="img/icons/Arrow-right-small.svg" alt="">
+                  </button>
+               </div>
+               <div class="footer__item">
+                  <div class="footer__subheader body-text" style="color: #FFFFFF66;">
+                     <span>Для коммерческих предложений</span>
+                  </div>
+                  <ul>
+                     <li>
+                        <a href="#" class="footer__link">gumarov@sovhimtech.ru</a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="footer__item last">
+                  <div class="footer__subheader body-text" style="color: #FFFFFF66;">
+                     <span>Покупка реагентов</span>
+                  </div>
+                  <ul>
+                     <li>
+                        <a href="#" class="footer__link">sales@sovhimtech.ru</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="footer__down">
+               <span>©2025, Современные Химические Технологии</span>
+               <span>
+                  Made by <a href="#" target="_blank" class="footer__link">OKTTA</a>
+               </span>
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>
+
+   </div>
+   <script src="https://unpkg.com/imask"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+
+</html>

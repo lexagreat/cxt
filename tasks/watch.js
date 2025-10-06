@@ -8,4 +8,5 @@ module.exports = function watching() {
    watch("src/img/**/*.+(svg|ico)", parallel("rastr"));
    watch("src/img/**/*.+(png|jpg|jpeg|gif)", series("rastr", "webp"));
    watch("src/fonts/**/*.ttf", series("ttf", "ttf2", "fonts"));
+   watch("src/files/**/*", parallel("files"));
 };

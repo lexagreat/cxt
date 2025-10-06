@@ -1391,6 +1391,7 @@
          }
          @media (max-width: $mobile) {
             --size: 40px;
+            flex: 0 0 var(--size);
          }
       }
       &.active {

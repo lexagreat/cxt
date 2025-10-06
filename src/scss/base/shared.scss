@@ -474,3 +474,102 @@ label {
       }
    }
 }
+.app-select {
+   position: relative;
+   &.open {
+      .select {
+         &__back {
+            pointer-events: all;
+         }
+         &__list {
+            opacity: 1;
+            pointer-events: all;
+         }
+         &__title {
+            svg {
+               rotate: 180deg;
+            }
+         }
+      }
+   }
+   .select {
+      &__title {
+         background-color: #ffffffcc;
+         border-radius: 10px;
+         height: 56px;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         padding: 0 12px;
+         @include body-text;
+         cursor: pointer;
+         @media (max-width: $mobile) {
+            @include regular_14;
+         }
+         &.placeholder {
+            color: #00000033;
+         }
+         @media (max-width: $mobile) {
+            height: 48px;
+         }
+         svg {
+            transition: 0.3s;
+         }
+         &.placeholder {
+         }
+      }
+      &__back {
+         position: fixed;
+
+         inset: 0;
+         pointer-events: none;
+      }
+      &__list {
+         translate: 0 4px;
+         position: absolute;
+         top: 100%;
+         left: 0;
+         width: 100%;
+         background-color: #ffffff;
+         border-radius: 10px;
+         z-index: 2;
+         height: 200px;
+         overflow: auto;
+         opacity: 0;
+         transition: 0.3s;
+         pointer-events: none;
+      }
+      &__item {
+         cursor: pointer;
+         height: 40px;
+         display: flex;
+         align-items: center;
+         gap: 0;
+         padding: 0 12px;
+         @include body-text;
+         color: #00000066;
+         transition: 0.3s;
+         &::before {
+            --size: 0px;
+            content: "";
+            display: block;
+            width: var(--size);
+            height: var(--size);
+            flex: 0 0 var(--size);
+            background: url(../img/icons/checkmark.svg) no-repeat center center /
+               contain;
+            transition: 0.3s;
+         }
+         @media (max-width: $mobile) {
+            @include regular_14;
+         }
+         &.selected {
+            color: black;
+            gap: 8px;
+            &::before {
+               --size: 24px;
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,298 @@
+.contacts-hero {
+   padding-top: calc(var(--header) + 12px);
+   @media (max-width: $tablet) {
+      position: relative !important;
+   }
+   // .contacts-hero__wrapper
+
+   &__wrapper {
+      height: calc(100svh - var(--header) - 12px);
+      display: flex;
+      flex-direction: column;
+      gap: calc(var(--margin) / 2);
+      @media (max-width: $tablet) {
+         height: unset;
+         padding-bottom: calc(var(--margin) + 5svh + 10px);
+      }
+   }
+
+   // .contacts-hero__title
+
+   &__title {
+      margin-top: 64px;
+      @media (max-width: $mobile) {
+         margin-top: 40px;
+      }
+   }
+
+   // .contacts-hero__main
+
+   &__main {
+      display: flex;
+      gap: 28px;
+      justify-content: space-between;
+      @media (max-width: $tablet) {
+         flex-direction: column;
+      }
+   }
+
+   // .contacts-hero__nav
+
+   &__nav {
+      flex: 0 0 178px;
+      @media (max-width: $tablet) {
+         display: flex;
+         flex-direction: column;
+         gap: 40px;
+         flex: unset;
+      }
+      @media (max-width: $mobile) {
+         gap: 32px;
+      }
+      ul {
+         display: flex;
+         flex-direction: column;
+         gap: 12px;
+         @extend .scrollbar-none;
+         @media (max-width: $tablet) {
+            flex-direction: row;
+            margin: 0 calc(var(--container) * -1);
+            padding: 0 var(--container);
+            width: 100vw;
+            overflow: auto;
+            white-space: nowrap;
+            button {
+               padding: 0 16px;
+            }
+         }
+         @media (max-width: $mobile) {
+            gap: 8px;
+         }
+      }
+   }
+   &__progress {
+      display: none;
+      height: 2px;
+      background: white;
+      .swiper-scrollbar-drag {
+         height: 100%;
+         background-color: #d9dce1;
+      }
+      @media (max-width: $tablet) {
+         display: block;
+      }
+   }
+   // .contacts-hero__slider
+
+   &__slider {
+      flex: 0 1 1016px;
+      max-width: 1016px;
+      @media (max-width: $tablet) {
+         flex: unset;
+         max-width: 100%;
+      }
+   }
+}
+.contacts-slide {
+   background-color: white;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-radius: 24px;
+   @media (max-width: $tablet) {
+      flex-direction: column;
+      align-items: flex-start;
+   }
+   // .contacts-slide__main
+
+   &__main {
+      padding: 64px;
+      ul {
+         display: flex;
+         flex-direction: column;
+         gap: 64px;
+         li {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            color: black;
+            a {
+               color: black;
+            }
+            span {
+               opacity: 0.4;
+            }
+         }
+      }
+      @media (max-width: $tablet) {
+         padding: 32px;
+         padding-bottom: 48px;
+         ul {
+            flex-direction: row;
+            gap: 44px;
+            li {
+               gap: 16px;
+            }
+         }
+      }
+      @media (max-width: $mobile) {
+         padding: 20px;
+         padding-bottom: 28px;
+         ul {
+            flex-direction: column;
+            li {
+               gap: 12px;
+               span {
+                  font-size: 14px;
+               }
+               a {
+                  font-size: 20px;
+               }
+            }
+         }
+      }
+   }
+
+   // .contacts-slide__image
+
+   &__image {
+      flex: 0 0 520px;
+      border-radius: 24px;
+      overflow: hidden;
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+      @media (max-width: $tablet) {
+         flex: unset;
+         width: 100%;
+      }
+   }
+}
+.contacts-office {
+   padding-top: var(--margin);
+
+   // .contacts-office__wrapper
+
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: calc(var(--margin) / 2);
+   }
+
+   // .contacts-office__title
+
+   &__title {
+   }
+
+   // .contacts-office__image
+
+   &__image {
+      position: relative;
+      height: 720px;
+      border-radius: 24px;
+      overflow: hidden;
+      & > img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+      @media (max-width: $tablet) {
+         height: 740px;
+      }
+      @media (max-width: $mobile) {
+         height: 608px;
+         border-radius: 20px;
+      }
+   }
+
+   // .contacts-office__info
+
+   &__info {
+   }
+}
+.office-info {
+   position: absolute;
+   top: 28px;
+   right: 28px;
+   padding: 28px;
+   padding-top: 68px;
+   border-radius: 24px;
+   background: $blue;
+   color: white;
+   display: flex;
+   flex-direction: column;
+   gap: 74px;
+   transition: 0.3s;
+   &.hidden {
+      opacity: 0;
+      pointer-events: none;
+   }
+   @media (max-width: $tablet) {
+      top: 20px;
+      right: 20px;
+      padding-top: 48px;
+      gap: 40px;
+   }
+   @media (max-width: $mobile) {
+      left: 12px;
+      right: 12px;
+      top: 12px;
+      padding: 20px;
+      padding-top: 40px;
+      gap: 44px;
+   }
+   &__close {
+      position: absolute;
+      top: 28px;
+      right: 28px;
+      @media (max-width: $mobile) {
+         top: 20px;
+         right: 20px;
+      }
+   }
+   @media (max-width: $mobile) {
+      top: 12px;
+      right: 12px;
+   }
+   &__main {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      a {
+         color: white;
+      }
+      ul {
+         display: flex;
+         flex-direction: column;
+         gap: 28px;
+         li {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+         }
+      }
+      @media (max-width: $tablet) {
+         gap: 40px;
+         ul {
+            gap: 24px;
+            li {
+               gap: 8px;
+            }
+         }
+      }
+      @media (max-width: $mobile) {
+         gap: 28px;
+         ul {
+            flex-direction: row;
+            justify-content: space-between;
+            li {
+               * {
+                  @include regular_14;
+               }
+            }
+         }
+      }
+   }
+}

@@ -21,12 +21,21 @@ document.addEventListener("DOMContentLoaded", () => {
    help();
    catalog();
    product();
+   production();
    files();
+   media();
+   job();
+   article();
+   contacts();
+   tech();
+   about();
 });
 
 function header() {
    const header = document.querySelector(".header");
    if (!header) return;
+   const searchElem = document.querySelector(".header-search");
+   const spoilerElem = document.querySelector(".header-spoiler");
    const hero = document.querySelector(".hero");
    let lastScroll = Math.max(0, window.scrollY);
    let ticking = false;
@@ -83,7 +92,77 @@ function header() {
    function makeHidden() {
       header.classList.add("hidden");
    }
+   function search() {
+      const btn = document.querySelector(".header__search");
+      if (!btn) return;
 
+      btn.addEventListener("click", () => {
+         if (searchElem.classList.contains("active")) {
+            searchElem.classList.remove("active");
+            bodyUnLock();
+            makeWhite();
+         } else {
+            searchElem.classList.add("active");
+            bodyLock();
+            makeTransparent();
+         }
+         spoilerElem.classList.remove("active");
+      });
+   }
+   function spoiler() {
+      const btn = document.querySelector(".header__production");
+      const backdrop = document.querySelector(".header-spoiler__backdrop");
+      if (!btn) return;
+
+      btn.addEventListener("mouseenter", () => {
+         searchElem.classList.remove("active");
+         spoilerElem.classList.add("active");
+         bodyLock();
+         // if (spoilerElem.classList.contains("active")) {
+         //    spoilerElem.classList.remove("active");
+         //    bodyUnLock();
+         // } else {
+         //    spoilerElem.classList.add("active");
+         //    bodyLock();
+         // }
+         makeWhite();
+      });
+      backdrop.addEventListener("mouseenter", () => {
+         spoilerElem.classList.remove("active");
+         bodyUnLock();
+      });
+   }
+   function burger() {
+      const burgerBtn = document.querySelector(".header__burger");
+      if (!burgerBtn) return;
+      const mobileMenu = document.querySelector(".header-mobile");
+      const sublink = document.querySelector(".header-mobile__link-sub");
+      const subMenu = document.querySelector(".header-mobile__sub");
+      const subMenuBack = document.querySelector(".header-mobile__sub-back");
+      burgerBtn.addEventListener("click", () => {
+         if (burgerBtn.classList.contains("active")) {
+            burgerBtn.classList.remove("active");
+            mobileMenu.classList.remove("active");
+            bodyUnLock();
+         } else {
+            burgerBtn.classList.add("active");
+            mobileMenu.classList.add("active");
+            bodyLock();
+            makeWhite();
+         }
+      });
+      sublink.addEventListener("click", (e) => {
+         e.preventDefault();
+         subMenu.classList.add("active");
+      });
+      subMenuBack.addEventListener("click", () => {
+         subMenu.classList.remove("active");
+      });
+   }
+   onScroll();
+   search();
+   spoiler();
+   burger();
    window.addEventListener("scroll", () => {
       if (!ticking) {
          window.requestAnimationFrame(onScroll);
@@ -94,7 +173,7 @@ function header() {
 
 function home() {
    function hero() {
-      const slider = document.querySelector(".home-hero .swiper");
+      const slider = document.querySelector(".home-hero__swiper");
       if (!slider) return;
       new Swiper(slider, {
          slidesPerView: 1,
@@ -656,7 +735,210 @@ function product() {
    order();
    btns();
 }
+function production() {
+   const firstCard = document.querySelector(
+      ".production-hero__card:nth-child(1)"
+   );
+   const secondCard = document.querySelector(
+      ".production-hero__card:nth-child(2)"
+   );
 
+   if (!firstCard || !secondCard) return;
+
+   ScrollTrigger.create({
+      trigger: secondCard,
+      start: "top bottom",
+      end: "top top",
+      scrub: true,
+      onUpdate: (self) => {
+         const progress = self.progress;
+         gsap.set(firstCard, {
+            opacity: 1 - progress / 2,
+            scale: 1 - progress / 9,
+         });
+      },
+   });
+}
+function media() {
+   function hero() {
+      const slider = document.querySelector(".media-hero__slider .swiper");
+      if (!slider) return;
+      new Swiper(slider, {
+         slidesPerView: 1,
+         spaceBetween: 16,
+         navigation: {
+            nextEl: ".media-hero .next",
+            prevEl: ".media-hero .prev",
+         },
+         mousewheel: {
+            enabled: true,
+            forceToAxis: true,
+         },
+      });
+   }
+   function newSlider() {
+      const slider = document.querySelector(".new-news__main .swiper");
+      if (!slider) return;
+      new Swiper(slider, {
+         breakpoints: {
+            0: {
+               slidesPerView: "auto",
+            },
+            1024: {
+               slidesPerView: 2,
+            },
+         },
+         spaceBetween: 16,
+         mousewheel: {
+            enabled: true,
+            forceToAxis: true,
+         },
+         navigation: {
+            nextEl: ".new-news .next",
+            prevEl: ".new-news .prev",
+         },
+      });
+   }
+   hero();
+   newSlider();
+}
+
+function job() {
+   function offers() {
+      const offers = document.querySelectorAll(".job-offers__item");
+      if (!offers.length) return;
+
+      const observer = new IntersectionObserver(
+         (entries) => {
+            entries.forEach((entry) => {
+               if (entry.isIntersecting) {
+                  offers.forEach((item) => item.classList.remove("active"));
+                  entry.target.classList.add("active");
+               }
+            });
+         },
+         {
+            threshold: 1,
+            rootMargin: "-20% 0px -20% 0px",
+         }
+      );
+
+      offers.forEach((offer) => observer.observe(offer));
+   }
+   if (document.querySelector("#select-container")) {
+      new Select("#select-container", {
+         placeholder: "Желаемая должность",
+         data: [
+            {
+               id: 1,
+               value: "Химик-лаборант (технолог)",
+            },
+            {
+               id: 2,
+               value: "Стажёр отдела продаж",
+            },
+            {
+               id: 3,
+               value: "Главный технолог химического производства",
+            },
+            {
+               id: 4,
+               value: "Химик-лаборант (технолог) ",
+            },
+            {
+               id: 5,
+               value: "Стажёр отдела продаж ",
+            },
+            {
+               id: 6,
+               value: "Химик-лаборант (технолог) 1",
+            },
+            {
+               id: 7,
+               value: "Стажёр отдела продаж 1",
+            },
+            {
+               id: 8,
+               value: "Главный технолог химического производства 1",
+            },
+            {
+               id: 9,
+               value: "Химик-лаборант (технолог) 1",
+            },
+            {
+               id: 10,
+               value: "Стажёр отдела продаж 1",
+            },
+         ],
+      });
+   }
+   offers();
+}
+function article() {
+   function sticky() {
+      const sticky = document.querySelector(".article-sticky");
+      if (!sticky) return;
+      const offers = document.querySelectorAll(".article-sticky__card");
+      const texts = document.querySelectorAll(".article-sticky__text");
+      const textWrapper = document.querySelector(".article-sticky__texts");
+      const observer = new IntersectionObserver(
+         (entries) => {
+            entries.forEach((entry) => {
+               if (entry.isIntersecting) {
+                  offers.forEach((item) => item.classList.remove("active"));
+                  entry.target.classList.add("active");
+                  texts.forEach((item) => item.classList.remove("active"));
+                  const targetIndex = Array.from(offers).indexOf(entry.target);
+                  if (targetIndex !== -1 && texts[targetIndex]) {
+                     texts[targetIndex].classList.add("active");
+                     if (window.innerWidth < 1024) {
+                        textWrapper.style.flex = `0 0 ${texts[targetIndex].clientHeight}px`;
+                     }
+                  }
+               }
+            });
+         },
+         {
+            threshold: 1,
+            rootMargin: "-20% 0px -20% 0px",
+         }
+      );
+
+      offers.forEach((offer) => observer.observe(offer));
+   }
+   function focus() {
+      const slider = document.querySelector(".article-focus__slider .swiper");
+      if (!slider) return;
+      new Swiper(slider, {
+         slidesPerView: 1,
+         spaceBetween: 16,
+         navigation: {
+            nextEl: ".article-focus .next",
+            prevEl: ".article-focus .prev",
+         },
+         pagination: {
+            el: ".article-focus .home-hero__pagination",
+            type: "custom",
+            renderCustom: function (swiper, current, total) {
+               const spans = Array.from(
+                  { length: total },
+                  (_, i) =>
+                     `<span${
+                        i + 1 === current ? ' class="active"' : ""
+                     }></span>`
+               ).join("");
+               return `<p class="current">${current}</p> <div>${spans}</div> <p class="total">${total}</p>`;
+            },
+         },
+         mousewheel: {
+            enabled: true,
+            forceToAxis: true,
+         },
+      });
+   }
+   sticky();
+   focus();
+}
 function files() {
    const fileInputs = document.querySelectorAll(".file-input");
    if (!fileInputs.length) return;
@@ -677,7 +959,258 @@ function files() {
       });
    });
 }
+function tech() {
+   function lab() {
+      const lab = document.querySelector(".tech-lab");
+      if (!lab) return;
+      const circle = document.querySelector(".tech-lab__circle");
+      const items = document.querySelectorAll(".tech-lab__list li");
+      const spans = document.querySelectorAll(".tech-lab__circle span");
 
+      if (!circle || !items.length) return;
+
+      ScrollTrigger.create({
+         trigger: lab,
+         start: "top 0%",
+         end: "bottom 100%",
+         scrub: 0.1,
+         markers: false,
+         onUpdate: (self) => {
+            const progress = self.progress;
+
+            let borderWidth;
+            if (progress <= 0.5) {
+               borderWidth = gsap.utils.mapRange(0, 0.5, 0, 85, progress);
+            } else {
+               borderWidth = gsap.utils.mapRange(0.5, 1, 85, 255, progress);
+            }
+
+            gsap.set(circle, { borderWidth: borderWidth });
+
+            const adjustedProgress = Math.max(0, progress - 0.1);
+            const activeIndex = Math.floor(adjustedProgress * items.length);
+            const clampedIndex = Math.min(activeIndex, items.length - 1);
+
+            items.forEach((item, index) => {
+               item.classList.toggle("active", index === clampedIndex);
+            });
+            spans.forEach((item, index) => {
+               item.classList.toggle("active", index === clampedIndex);
+            });
+         },
+      });
+   }
+   function gallery() {
+      const slider = document.querySelector(".tech-gallery__slider .swiper");
+      if (!slider) return;
+      const btns = document.querySelectorAll(
+         ".tech-gallery__controls ul button"
+      );
+      btns.forEach((btn) => {
+         btn.addEventListener("click", () => {
+            btns.forEach((item) => {
+               item.classList.remove("active");
+            });
+            btn.classList.add("active");
+         });
+      });
+      new Swiper(slider, {
+         slidesPerView: "auto",
+         spaceBetween: 16,
+         navigation: {
+            nextEl: ".tech-gallery .next",
+            prevEl: ".tech-gallery .prev",
+         },
+         mousewheel: {
+            enabled: true,
+            forceToAxis: true,
+         },
+      });
+   }
+   lab();
+   gallery();
+}
+function contacts() {
+   function hero() {
+      const slider = document.querySelector(".contacts-hero__slider .swiper");
+      if (!slider) return;
+      const navBtns = document.querySelectorAll(
+         ".contacts-hero__nav ul button"
+      );
+      let swiper = new Swiper(slider, {
+         slidesPerView: 1,
+         spaceBetween: 16,
+         scrollbar: {
+            el: ".contacts-hero__progress",
+            draggable: true,
+         },
+         mousewheel: {
+            enabled: true,
+            forceToAxis: true,
+         },
+         speed: 1000,
+         on: {
+            slideChange: () => {
+               navBtns.forEach((btn) => {
+                  btn.classList.remove("active");
+               });
+               navBtns[swiper.activeIndex].classList.add("active");
+            },
+         },
+      });
+      navBtns.forEach((btn, index) => {
+         btn.addEventListener("click", () => {
+            swiper.slideTo(index);
+         });
+      });
+   }
+   function office() {
+      const dots = document.querySelectorAll(
+         ".contacts-office .home-geography__dot"
+      );
+      const preview = document.querySelector(".office-info");
+      const closeBtn = document.querySelector(".office-info__close");
+      if (!dots || !preview || !closeBtn) return;
+      dots.forEach((dot) => {
+         dot.addEventListener("click", () => {
+            dots.forEach((el) => el.classList.remove("active"));
+            dot.classList.add("active");
+            preview.classList.remove("hidden");
+         });
+      });
+      closeBtn.onclick = () => {
+         preview.classList.add("hidden");
+         dots.forEach((el) => el.classList.remove("active"));
+      };
+   }
+   hero();
+   office();
+}
+
+function about() {
+   function solutions() {
+      const square = document.querySelector(".about-solutions__square");
+      const heading = document.querySelector(".about-solutions__heading");
+      if (!square || !heading) return;
+      const elems = document.querySelectorAll(".about-solutions__elems > *");
+      gsap.set(heading, { scale: 1, opacity: 1 });
+      gsap.set(square, { opacity: 0 });
+
+      gsap.to(heading, {
+         scale: 0.5,
+         opacity: 0,
+         scrollTrigger: {
+            trigger: heading,
+            start: "top 20%",
+            end: "top -10%",
+            scrub: 1,
+         },
+      });
+
+      gsap.set(square, {
+         "--fill-percent": "0%",
+      });
+
+      gsap.to(square, {
+         opacity: 1,
+         scrollTrigger: {
+            trigger: heading,
+            start: "top -10%",
+            end: "top -40%",
+            scrub: 1,
+         },
+      });
+      gsap.to(square, {
+         "--fill-percent": "100%",
+         scrollTrigger: {
+            trigger: heading,
+            start: "top -40%",
+            end: "top -150%",
+            scrub: 1,
+            onUpdate: (self) => {
+               if (self.progress === 1) {
+                  square.classList.add("active");
+               } else {
+                  square.classList.remove("active");
+               }
+            },
+         },
+      });
+      elems.forEach((elem, index) => {
+         gsap.to(elem, {
+            top: "50%",
+            left: "50%",
+            translate: "-50% -50%",
+            scrollTrigger: {
+               trigger: heading,
+               start: `top ${-40 - index * 3}%`,
+               end: `top ${-100 - index * 3}%`,
+               scrub: 0.1,
+               onUpdate: (self) => {
+                  if (self.progress > 0.9 || self.progress < 0.1) {
+                     elem.classList.add("hidden");
+                  } else {
+                     elem.classList.remove("hidden");
+                  }
+               },
+            },
+         });
+      });
+   }
+   function team() {
+      const slider = document.querySelector(".about-team__slider .swiper");
+      const items = document.querySelectorAll(".about-team__items li");
+      if (!slider) return;
+      let sw = new Swiper(slider, {
+         slidesPerView: 1,
+         spaceBetween: 48,
+         navigation: {
+            nextEl: ".about-team .next",
+            prevEl: ".about-team .prev",
+         },
+         mousewheel: {
+            enabled: true,
+            forceToAxis: true,
+         },
+         on: {
+            slideChange: (swiper) => {
+               items.forEach((item) => {
+                  item.classList.remove("active");
+               });
+               items[swiper.activeIndex].classList.add("active");
+            },
+         },
+      });
+      items.forEach((item, index) => {
+         item.addEventListener("click", (e) => {
+            e.preventDefault();
+            sw.slideTo(index);
+         });
+      });
+   }
+   function clients() {
+      const items = document.querySelectorAll(".about-clients__items li");
+      if (!items.length) return;
+      const delay = 3000;
+      let activeIndex = 0;
+      setInterval(() => {
+         items.forEach((item) => {
+            item.classList.remove("active", "prev");
+         });
+         items[activeIndex].classList.add("active");
+         if (activeIndex > 0) {
+            items[activeIndex - 1].classList.add("prev");
+         }
+         activeIndex++;
+         if (activeIndex >= items.length) {
+            activeIndex = 0;
+         }
+      }, delay);
+   }
+   solutions();
+   team();
+   clients();
+}
 function accordion(linkSelector, contentSelector) {
    // получаем линки
    const openLinks = document.querySelectorAll(`${linkSelector}`);
@@ -788,6 +1321,113 @@ function slideHide(el, duration = 500) {
       el.style["overflow"] = "";
    }, duration);
 }
+class Select {
+   constructor(selector, options) {
+      this.$el = document.querySelector(selector);
+      this.options = options;
+      this.selectedId = options.selectedId || null;
+
+      this.render();
+      this.setup();
+   }
+   render() {
+      this.$el.classList.add("select");
+      const { placeholder, data, selectedId } = this.options;
+      this.$el.innerHTML = this.getTemplate(data, placeholder, selectedId);
+      if (placeholder) {
+         this.$el
+            .querySelector(`[data-type="input"]`)
+            .classList.add("placeholder");
+      }
+   }
+   setup() {
+      this.clickHandler = this.clickHandler.bind(this);
+      this.$el.addEventListener("click", this.clickHandler);
+      this.$value = this.$el.querySelector(`[data-type="input"] span`);
+   }
+   clickHandler(event) {
+      const { type } = event.target.dataset;
+      if (type === "input") {
+         this.toggle();
+      } else if (type === "item") {
+         const { id } = event.target.dataset;
+         this.select(id);
+      } else if (type === "back") {
+         this.toggle();
+      } else if (type === "header") {
+         this.toggle();
+      } else if (event.target.closest(".select__header")) [this.toggle()];
+   }
+   get current() {
+      return this.options.data.find(
+         (item) => String(item.id) === String(this.selectedId)
+      );
+   }
+   select(id) {
+      this.$el
+         .querySelector(`[data-type="input"]`)
+         .classList.remove("placeholder");
+      this.selectedId = String(id);
+
+      if (!this.current) {
+         console.warn(`Select: item with id "${id}" not found in data`);
+         return;
+      }
+
+      this.$value.innerHTML = this.current.value;
+      this.$el.querySelectorAll(`[data-type="item"]`).forEach((item) => {
+         item.classList.remove("selected");
+      });
+      this.$el
+         .querySelector(`[data-id="${this.current.id}"]`)
+         .classList.add("selected");
+      this.close();
+
+      if (this.options.onSelect) {
+         this.options.onSelect(this.current, this.$el);
+      }
+   }
+   open() {
+      this.$el.classList.add("open");
+   }
+   close() {
+      this.$el.classList.remove("open");
+   }
+   toggle() {
+      if (this.$el.classList.contains("open")) {
+         this.close();
+      } else {
+         this.open();
+      }
+   }
+   getTemplate(data, placeholder = `<span></span>`, selectedId) {
+      const items = data.map((item) => {
+         let cls = "";
+         if (selectedId && String(item.id) === String(selectedId)) {
+            placeholder = item.value;
+            cls = "selected";
+         }
+         return `<li class="select__item ${cls}" data-type="item" data-id="${item.id}">${item.value}</li>`;
+      });
+      return `
+      <div class="select__header" data-type="header">
+      <div class="select__back" data-type="back"></div>
+      <div class="select__title" data-type="input">
+         <span>${placeholder}</span>
+         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6L8 10L12 6" stroke="#0E0E0E" stroke-linecap="round"/>
+         </svg>
+    </div>
+      </div>
+      <div class="select__content">
+         <ul class="select__list scrollbar-none">
+            ${items.join("")}
+         </ul>
+      </div>
+      `;
+   }
+}
+
 // Popup
 const popupLinks = document.querySelectorAll(".modal__link");
 const lockPadding = document.querySelectorAll(".lock-padding");
@@ -845,8 +1485,11 @@ function popupClose(popupActive, doUnlock = true) {
 }
 
 function bodyLock() {
-   const lockPaddingValue =
-      window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
+   console.log("bodyLock");
+   const wrapperElement = document.querySelector(".wrapper");
+   const lockPaddingValue = wrapperElement
+      ? window.innerWidth - wrapperElement.offsetWidth + "px"
+      : window.innerWidth - document.body.offsetWidth + "px";
 
    if (lockPadding.length > 0) {
       for (let index = 0; index < lockPadding.length; index++) {
@@ -865,6 +1508,7 @@ function bodyLock() {
 }
 
 function bodyUnLock() {
+   console.log("bodyUnLock");
    setTimeout(function () {
       if (lockPadding.length > 0) {
          for (let index = 0; index < lockPadding.length; index++) {

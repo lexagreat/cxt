@@ -64,11 +64,15 @@
          z-index: 2;
          top: calc(var(--header) + var(--gap) + var(--gap));
          /* background-color: red !important; */
-         box-shadow: 0 8px 24px 0 #0001;
+         // box-shadow: 0 8px 24px 0 #0001;
       }
       &:nth-child(3) {
          top: calc(var(--header) + var(--gap) + var(--gap) + var(--gap));
          z-index: 3;
+      }
+      @media (max-width: $mobile) {
+         top: unset !important;
+         position: relative;
       }
    }
 }
@@ -224,7 +228,8 @@
       border-radius: 24px;
       overflow: hidden;
 
-      & > img {
+      & > img,
+      video {
          position: absolute;
          top: 0;
          left: 0;
@@ -258,6 +263,7 @@
    // .help-section__text
 
    &__text {
+      max-width: 400px;
       color: #ffffffcc;
    }
 

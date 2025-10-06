@@ -16,6 +16,7 @@
          display: flex;
          align-items: center;
          gap: 4px;
+         white-space: nowrap;
          &::after {
             content: "/";
             color: #00000066;
